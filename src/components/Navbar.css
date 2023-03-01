@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+#barra_de_pesquisa {
+    border-bottom: 5px solid #fcd96f;
+    background-color: #d3723f !important;
+}
+
+.logo{
+    height: 100px;
+}
+
+.nav-link{
+    color: white;
+    left: 100px;
+}
+
+.me-auto{
+    
+    width: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    font-family: Shrikhand;
+}
