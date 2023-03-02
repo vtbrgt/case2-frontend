@@ -13,16 +13,16 @@ const NavbarReact = () => {
     <div>
        <Navbar id='barra_de_pesquisa' variant="dark" bg="bg-warning" expand="lg">
       <Container >
-        <Navbar.Brand href="#home"><img src={logo} className='logo' /></Navbar.Brand>
+        <Navbar.Brand href="/"><img src={logo} className='logo' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <Nav.Link href="/menu">Menu</Nav.Link>
+            <NavDropdown title="Ver mais" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/sobre">Sobre o Restaurante</NavDropdown.Item>
+              <NavDropdown.Item href="Login">
+                Contato
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
