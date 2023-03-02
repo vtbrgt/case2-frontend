@@ -21,10 +21,10 @@ const NavbarReact = () => {
             <Nav.Link href="/menu">Menu</Nav.Link>
             <NavDropdown title="Ver mais" id="basic-nav-dropdown">
               <NavDropdown.Item href="/sobre">Sobre o Restaurante</NavDropdown.Item>
-              <NavDropdown.Item href="Login">
-                Contato
+              <NavDropdown.Item href="/login">
+                Login
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Contato</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link
