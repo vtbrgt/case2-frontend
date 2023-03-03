@@ -24,7 +24,7 @@ const NavbarReact = () => {
               <NavDropdown.Item href="/login">
                 Login
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Contato</NavDropdown.Item>
+              <NavDropdown.Item href="/Contato">Contato</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link
