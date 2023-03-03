@@ -1,9 +1,9 @@
-import { Outlet } from 'react-router-dom'
+// import { Outlet } from 'react-router-dom'
 
 import { useState } from 'react'
 import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import Rotas from './routes/Rotas.jsx'
+import Routes from './routes/Routes.jsx'
 
 import NavbarReact from './components/Navbar'
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <NavbarReact />
-      <Rotas />
+      <Routes />
 
     </div>
   )
