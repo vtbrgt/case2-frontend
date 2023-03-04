@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import Routes from './routes/Routes.jsx'
+import Rotas from './routes/Routes.jsx'
 
 import NavbarReact from './components/Navbar'
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <NavbarReact />
-      <Routes />
+      <Rotas />
 
     </div>
   )

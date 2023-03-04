@@ -1,5 +1,5 @@
-import React from 'react'
-import {Route, BrowserRouter, Switch, Redirect } from 'react-router-dom'
+
+import {Route, Routes, Navigate } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import Sobre from '../pages/Sobre'
@@ -15,23 +15,21 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     isAuthnticated() ? (
       <Component { ... props}/>
     ) : (
-      <Redirect to={{pathname: '/login', state:{ from: props.location}}} />
+      <Navigate to={{pathname: '/login', state:{ from: props.location}}} />
     )
   )}/>
 )
 
 
-const Routes = () => (
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={() => <Home />} />
-            <Route exact path="/sobre" component={() => <Sobre/>} />
-            <Route exact path="/menu" component={() => <Menu/>} /> 
-            <Route exact path="/login" component={() => <Login/>} />
-            <Route exact path="/contato" component={() => <Contato/>} />
-            <PrivateRoute exact path="/adm" component={() => <Admin/>} />
-          </Switch>
-        </BrowserRouter>
+const Rotas = () => (
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/sobre" element={<Sobre/>} />
+            <Route exact path="/menu" element={<Menu/>} /> 
+            <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/contato" element={<Contato/>} />
+            <Route exact path="/adm" component={<PrivateRoute component={ <Admin />} />} />
+          </Routes>
     )
 
-export default Routes
+export default Rotas
