@@ -1,22 +1,34 @@
-// import { Outlet } from 'react-router-dom'
-
 import { useState } from 'react'
 import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import Rotas from './routes/Routes.jsx'
-
 import NavbarReact from './components/Navbar'
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
+  <>
+    <div>
       <NavbarReact />
-      <Rotas />
-
     </div>
-  )
+    <div>
+      <Outlet/>
+    </div>
+  </>
+  );
 }
 
-export default App
+export default App;
+
+// function App() {
+//   const [count, setCount] = useState(0)
+
+//   return (
+//     <div className="App">
+//       <NavbarReact />
+//       <Rotas />
+
+//     </div>
+//   )
+// }
+
+// export default App

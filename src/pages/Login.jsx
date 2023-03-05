@@ -1,50 +1,98 @@
-import React,{useState} from 'react'
-import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Api from '../api/Api'
+import React, {useState} from 'react';
+
+import {Api}  from '../api/Api'
+
+import * as yup from "yup";
+import { ErrorMessage, Formik, Form, Field } from "formik";
 
 
-function Login() {
+import { Link, useNavigate } from "react-router-dom";
 
-  const Submit = async (event) => {
-      event.preventDefault()
-      const form = event.currentTarget
-      const email = form.elements.Email.value
-      const senha = form.elements.Senha.value
+function Login(){
+  const [token, setToken] = useState();
+  const navigate = useNavigate();
 
-      const retorno = await Api().login(email, senha)
-      if(!retorno.ok){
-          alert('Não foi possível realizar o login')
-          return
+  const handleLogin = (values) => {
+    Api.post("/login", {
+      email_users: values.email,
+      senha_users: values.password,
+    })
+    .then((response) => {
+      const validation = response.data.validation
+     const result =() => {
+      if (response.data.results && response.data.results.length > 0) {
+        const result = response.data.results[0].email_users;
+        // Resto do código aqui
+      } else {
+        console.error("Não há resultados válidos na resposta da API.");
+      }}
+      // const result = response.data.results[0].email_users
+      console.log(result.result);
+
+      if(validation){
+        localStorage.setItem('tokenAuth', validation);
+        localStorage.setItem('userAuth', JSON.stringify(result));
+        navigate('/adm', { replace: true })
+        if(token){
+          alert("Usuário logado com sucesso!");
+          const jsonStorage = localStorage.getItem('userAuth');
+          console.log(jsonStorage);
+        }
+      }else{
+        console.log(response.data);
+        alert("Credenciais inválidas!");
       }
+    });
+  };
 
-      const dados = await retorno.json()
-      localStorage.setItem('token', dados.token)
-      window.location.href = '/admin/funcionalidades'
-  }
+  const validationsLogin = yup.object().shape({
+    email: yup
+      .string()
+      .email("email inválido")
+      .required("O email é obrigatório"),
+    password: yup
+      .string()
+      .min(4, "A senha deve ter pelo menos 4 caracteres")
+      .required("A senha é obrigatória"),
+  });
 
   return (
-      <Container className='conteudo-margin'>
+    <div className="container">
       <h1>Login</h1>
-      <Form onSubmit={Submit}>
-        <Form.Group className="mb-3" controlId="Email">
-          <Form.Label>E-mail</Form.Label>
-          <Form.Control type="email" placeholder="E-mail" />
-          <Form.Text className="text-muted">
-          </Form.Text>
-        </Form.Group>
-  
-        <Form.Group className="mb-3" controlId="Senha">
-          <Form.Label>Senha</Form.Label>
-          <Form.Control type="password" placeholder="Senha" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-                  Realizar Login
-              </Button>
-      </Form>
-      </Container>
-    );
-  }
+      <Formik
+        initialValues={{}}
+        onSubmit={handleLogin}
+        validationSchema={validationsLogin}
+      >
+        <Form className="login-form">
+          <div className="login-form-group">
+            <Field name="email" className="form-field" placeholder="Email" />
 
-export default Login
+            <ErrorMessage
+              component="span"
+              name="email"
+              className="form-error"
+            />
+          </div>
+          {/*Outro campo*/}
+          <div className="form-group">
+            <Field name="password" className="form-field" placeholder="Senha" />
+
+            <ErrorMessage
+              component="span"
+              name="password"
+              className="form-error"
+            />
+          </div>
+            <div>
+                <p>Ainda não é cadastrado? Cadastre-se <Link to={"/register"}>Aqui</Link></p>
+            </div>
+          <button className="button" type="submit">
+            Login
+          </button>
+        </Form>
+      </Formik>
+    </div>
+  );
+}
+export default Login;

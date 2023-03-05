@@ -1,13 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from 'react-dom'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import { Rotas } from './routes/Routes';
+
+import { RouterProvider } from 'react-router-dom';
+
+ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={Rotas}/>
   </React.StrictMode>,
-)
+  document.getElementById("root")
+);
