@@ -2,8 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-
-
+import './Contato.css'
 
 function Contato() {
   const handleSubmit = (event) => {
@@ -12,6 +11,7 @@ function Contato() {
     event.target.reset()
   }
   return (
+  <section>
     <Container className='conteudo-margin'>
       <h1 className="contact">Contato</h1>
       <p className= "text">Entre em contato conosco</p>
@@ -31,9 +31,9 @@ function Contato() {
         <Button variant="dark" type="submit">
           Enviar contato
         </Button>
-
       </Form>
     </Container>
+    </section>
   );
 }
 
