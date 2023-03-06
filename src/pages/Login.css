@@ -1,0 +1,19 @@
+.center{
+    margin-bottom: 50px;
+    text-align: center;
+    /* padding: 20px; */
+
+}
+.form-group{
+    padding: 10px;
+}
+
+.form-field{
+    padding: 5px;
+    width: 70%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    margin-top: 0px;
+}
