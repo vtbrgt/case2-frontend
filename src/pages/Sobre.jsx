@@ -24,7 +24,7 @@ const Sobre = () => {
   })
 
   return (
-    <div className='equipe'>
+    <div className='equipe body'>
       <h1>Nossa equipe</h1>
       <CardGroup>
       {funcionarios && funcionarios.map(funcionario => (

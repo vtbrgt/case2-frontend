@@ -10,7 +10,14 @@ function Contato() {
     alert('Mensagem enviada com sucesso!')
     event.target.reset()
   }
-  return (
+
+
+
+  
+  return ( 
+    <div className='body'>
+      
+    <img src="../assets/contato.jpg" alt="" />
   <section>
     <Container className='conteudo-margin'>
       <h1 className="contact">Contato</h1>
@@ -18,15 +25,19 @@ function Contato() {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="Nome">
           <Form.Label>Nome</Form.Label>
-          <Form.Control type="text" placeholder="Digite seu nome completo" />
+          <Form.Control required type="text" placeholder="Digite seu nome completo" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="Email">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Digite seu e-mail" />
+          <Form.Control required type="email" placeholder="Digite seu e-mail" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="assunto">
+          <Form.Label> Assunto</Form.Label>
+          <Form.Control required type="text" placeholder="Digite o assunto" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Mensagem</Form.Label>
-          <Form.Control as="textarea" rows={3} />
+          <Form.Control required as="textarea" rows={3} />
         </Form.Group>
         <Button variant="dark" type="submit">
           Enviar contato
@@ -34,6 +45,7 @@ function Contato() {
       </Form>
     </Container>
     </section>
+    </div>
   );
 }
 
