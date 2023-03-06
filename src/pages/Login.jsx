@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-
 import {Api}  from '../api/Api'
-
 import * as yup from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
-
+import {Container} from 'react-bootstrap'
+import './Login.css'
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -45,27 +44,19 @@ function Login(){
     });
   };
 
-  const validationsLogin = yup.object().shape({
-    email: yup
-      .string()
-      .email("email inválido")
-      .required("O email é obrigatório"),
-    password: yup
-      .string()
-      .min(4, "A senha deve ter pelo menos 4 caracteres")
-      .required("A senha é obrigatória"),
-  });
+ 
 
   return (
-    <div className="container">
+    <div className="body" id="login" >
+    <section>
+     <Container className="center">
       <h1>Login</h1>
       <Formik
         initialValues={{}}
         onSubmit={handleLogin}
-        validationSchema={validationsLogin}
       >
-        <Form className="login-form">
-          <div className="login-form-group">
+        <Form className=" login-form">
+          <div className="form-group">
             <Field name="email" className="form-field" placeholder="Email" />
 
             <ErrorMessage
@@ -73,10 +64,10 @@ function Login(){
               name="email"
               className="form-error"
             />
-          </div>
+          </div><br />
           {/*Outro campo*/}
           <div className="form-group">
-            <Field name="password" className="form-field" placeholder="Senha" />
+            <Field  name="password" className="form-field" placeholder="Senha" />
 
             <ErrorMessage
               component="span"
@@ -92,6 +83,8 @@ function Login(){
           </button>
         </Form>
       </Formik>
+    </Container>
+    </section>
     </div>
   );
 }
