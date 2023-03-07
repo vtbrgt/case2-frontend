@@ -25,8 +25,6 @@ const NavbarReact = () => {
                 Login
               </NavDropdown.Item>
               <NavDropdown.Item href="/contato">Contato</NavDropdown.Item>
-              <NavDropdown.Divider />
-             
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

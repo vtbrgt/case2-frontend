@@ -22,3 +22,16 @@
     font-size: 30px;
     font-family: Shrikhand;
 }
+
+.dropdown-menu {
+    background: #d3723f;
+    border-color: #fcd96f;
+}
+
+.dropdown-menu a {
+    color: white;
+}
+
+.dropdown-menu a:hover, .dropdown-menu a:focus {
+    background-color: #fcd96f;
+}
