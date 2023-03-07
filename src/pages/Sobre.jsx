@@ -6,12 +6,12 @@ import Funcionario from '../components/Funcionarios';
 import './Sobre.css';
 
 const Sobre = () => {
-  const [funcionarios, setFuncionarios] = React.useState(null)
-  const [loading, setLoading] = React.useState(true)
+  const [funcionarios, setFuncionarios] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
   async function getFuncionarios() {
     try {
-      const {data} = await Api.get('/funcionarios');
+      const { data } = await Api.get('/funcionarios');
       setFuncionarios(data);
       setLoading(false);
     } catch (err) {
@@ -20,20 +20,28 @@ const Sobre = () => {
   }
 
   React.useEffect(() => {
-    getFuncionarios()
-  })
+    getFuncionarios();
+  });
 
   return (
-    <div className='equipe body'>
-      <h1>Nossa equipe</h1>
-      <CardGroup>
-      {funcionarios && funcionarios.map(funcionario => (
-        <Funcionario nome={funcionario.nome} sobrenome={funcionario.sobrenome} cargo={funcionario.cargo} key={funcionario.id}/>
-      ))}
-    </CardGroup>
-    {loading && <Loading/>}
+    <div className="body">
+      <div className="equipe">
+        <h1>Nossa equipe</h1>
+        <CardGroup>
+          {funcionarios &&
+            funcionarios.map((funcionario) => (
+              <Funcionario
+                nome={funcionario.nome}
+                sobrenome={funcionario.sobrenome}
+                cargo={funcionario.cargo}
+                key={funcionario.id}
+              />
+            ))}
+        </CardGroup>
+        {loading && <Loading />}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Sobre;

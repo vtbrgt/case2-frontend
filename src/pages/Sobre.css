@@ -3,14 +3,22 @@
 .equipe {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6rem 1.25rem;
 }
 
 .equipe h1 {
-  margin-top: 1.25rem;
   font-family: Shrikhand;
-  color: #b45c2d;
+  color: #d3723f;
+  text-shadow: 1px 5px 8px #000000;
 }
 
 .card-group {
@@ -19,7 +27,7 @@
 }
 
 .card {
-  background: #fcd96f !important;
-  border-color: #d3723f !important;
-  color: #b45c2d
+  background: #d3723f !important;
+  border-color: #fcd96f !important;
+  color: #fcd96f;
 }
