@@ -48,7 +48,7 @@ function Login(){
 
   return (
     <div className="body" id="login" >
-    <section>
+    <section className='text'>
      <Container className="center">
       <h1>Login</h1>
       <Formik
