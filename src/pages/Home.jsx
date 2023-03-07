@@ -2,7 +2,13 @@ import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import Entradas from '../assets/entradas.png'
 import Prato from '../assets/pratos.png'
+import Delivery from '../assets/delivery.png'
 import Sobremesas from '../assets/sobremesas.png'
+import Card from 'react-bootstrap/Card';
+import Reserva from '../assets/reserva.png'
+import CardGroup from 'react-bootstrap/CardGroup'
+import { Link } from "react-router-dom"
+
 
 const Home = () => {
   return (
@@ -35,6 +41,17 @@ const Home = () => {
        
       </Carousel.Item>
     </Carousel>
+
+    
+    <CardGroup>
+      <Card>
+      <Link to={'/Contato'}>   <Card.Img variant="top" src={Reserva}/></Link>
+      </Card>
+      <Card>
+      <Link to={'/menu'}>   <Card.Img variant="top" src={Delivery}/></Link>
+      </Card>
+     
+    </CardGroup>
     </div>
   )
 }

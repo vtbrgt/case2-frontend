@@ -3,6 +3,7 @@ import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import NavbarReact from './components/Navbar'
 import { Outlet } from 'react-router-dom';
+import Rodape from './components/Rodape';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
     </div>
     <div>
       <Outlet/>
+    </div>
+    <div>
+      <Rodape/>
     </div>
   </>
   );
