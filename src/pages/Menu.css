@@ -4,16 +4,16 @@ body {
     background-color: #ffb49948;
 }
 
-
-
 .tabela {
     border-bottom: #fcd96f 4px solid;
     font-family: Shrikhand;
     color: #d3723f;
+    background-color: #ffb49948;
 }
 
 .informacoes {
     font-size: 25px;
+    text-align: center;
 }
 
 .nomePedido {
@@ -35,6 +35,10 @@ body {
 
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.post h2 {
+    margin-bottom: 0 !important;
 }
 
 .bg {

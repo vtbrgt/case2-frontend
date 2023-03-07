@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from '../components/Loading'
 import './Menu.css'
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -76,7 +77,7 @@ const Menu = () => {
       {/* <h1>Menu</h1> */}
       <div className='entradaMenu'>
         <div id='apresentar' className='bg'><h1 id='letra'>Entradas</h1></div>
-        {posts.length === 0 ? <div className='centralizar'><h1>Carregando</h1></div> : (
+        {posts.length === 0 ? <div className='centralizar'><Loading/></div> : (
           posts.map((equipaments) => (
             <div className='post' key={equipaments.id}>
               <h2>{ }</h2>
@@ -98,7 +99,7 @@ const Menu = () => {
       </div>
       <div className='entradaMenu'>
         <div id='apresentar'className='bg2'><h1 id='letra'>Pratos Principais</h1></div>
-        {principal.length === 0 ? <div className='centralizar'><h1></h1></div> : (
+        {principal.length === 0 ? <div className='centralizar'><Loading/></div> : (
           principal.map((equipaments) => (
             <div className='post' key={equipaments.id}>
               <h2>{ }</h2>
@@ -119,8 +120,8 @@ const Menu = () => {
 
       </div>
       <div className='entradaMenu'>
-        <div id='apresentar'className='bg3'><h1 id='letra'>Pratos Principais</h1></div>
-        {sobremesa.length === 0 ? <div className='centralizar'><h1></h1></div> : (
+        <div id='apresentar'className='bg3'><h1 id='letra'>Sobremesas</h1></div>
+        {sobremesa.length === 0 ? <div className='centralizar'><Loading/></div> : (
           sobremesa.map((equipaments) => (
             <div className='post' key={equipaments.id}>
               <h2>{ }</h2>
