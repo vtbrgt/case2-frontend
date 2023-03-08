@@ -10,6 +10,7 @@ import Admin from '../pages/admin'
 import Register from '../pages/Register'
 import App from '../App'
 import { createBrowserRouter } from 'react-router-dom';
+import Principal from '../pages/adminPrincipal'
 
 export const Rotas = createBrowserRouter([
   {
@@ -42,6 +43,11 @@ export const Rotas = createBrowserRouter([
       {
         path: '/adm',
         element: <Admin/>
+      }
+      ,
+      {
+        path: '/adm/principal',
+        element: <Principal/>
       }
     ]
   }
