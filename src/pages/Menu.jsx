@@ -85,9 +85,9 @@ const Menu = () => {
 
                 <div className="informacoes">
                   <h1 className='nomePedido'>{equipaments.nome}</h1>
-                  <p> {equipaments.ingredientes}</p>
-                  <p>Preco: {equipaments.preco}</p>
                   <p>{equipaments.descricao}</p>
+                  <p>Preco: {equipaments.preco}</p>
+                  
                   {/* <button className="btn envio" onClick={() => excluir(equipaments.id)}>Excluir</button> */}
                 </div>
 
