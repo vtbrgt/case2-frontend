@@ -11,6 +11,9 @@ import Register from '../pages/Register'
 import App from '../App'
 import { createBrowserRouter } from 'react-router-dom';
 import Principal from '../pages/adminPrincipal'
+import Entradas from '../pages/adminEntradas'
+import Sobremesas from '../pages/adiminSobremesas'
+import Funcionarios from '../pages/adminFuncionarios'
 
 export const Rotas = createBrowserRouter([
   {
@@ -43,11 +46,22 @@ export const Rotas = createBrowserRouter([
       {
         path: '/adm',
         element: <Admin/>
-      }
-      ,
+      },
       {
         path: '/adm/principal',
         element: <Principal/>
+      },
+      {
+        path: '/adm/entadas',
+        element: <Entradas />
+      },
+      {
+        path: '/adm/sobremesas',
+        element: <Sobremesas />
+      },
+      {
+        path: '/adm/funcionarios',
+        element: <Funcionarios />
       }
     ]
   }
