@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { Table, Container, Button } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
-import CreateModal from '../components/CreateAddModal'
-import UpdateModal from '../components/UpdateModal'
-import {Api} from '../api/Api'
+import CreateModal from '../components/ModalPrincipal/CreateAddModal'
+import UpdateModal from '../components/ModalPrincipal/UpdateModal'
+import { Api } from '../api/Api'
 
 function Principal() {
   const [Posts, setPosts] = useState()
@@ -35,19 +35,19 @@ function Principal() {
   }, []);
 
   async function deletePosts(Id) {
- 
+
     try {
       axios
-      Api.delete('/principal/' +Id)
+      Api.delete('/principal/' + Id)
 
       const formattedPosts = Posts.filter(Postss => {
-        if(Postss.id !== Id){
+        if (Postss.id !== Id) {
           return Postss
         }
       })
 
       setPosts(formattedPosts)
-    } catch(err) {
+    } catch (err) {
       throw err
     }
   }
@@ -61,16 +61,16 @@ function Principal() {
       const descricao = req.descricao.value
       const preco = req.preco.value
       axios
-    Api.post('/principal', { nome: nome, preco:preco, descricao:descricao})
-       .then(res => {
-        setPosts([...Posts, {
-          nome: req.nome.value,
-          descricao: req.descricao.value,
-          preco: req.preco.value
-                }])
-        setCreateModalOpen(false)
-      })
-    } catch(err) {
+      Api.post('/principal', { nome: nome, preco: preco, descricao: descricao })
+        .then(res => {
+          setPosts([...Posts, {
+            nome: req.nome.value,
+            descricao: req.descricao.value,
+            preco: req.preco.value
+          }])
+          setCreateModalOpen(false)
+        })
+    } catch (err) {
       throw err
     }
   }
@@ -85,13 +85,13 @@ function Principal() {
       const preco = req.preco.value
       const id = selectedPosts.id;
       axios
-       Api('/principal', {id:id, nome: nome, preco:preco, descricao:descricao})
-      
+      Api.put('/principal/' + id, { id: id, nome: nome, preco: preco, descricao: descricao })
+
       const formattedPosts = Posts.map(Postss => {
-        if(Postss.id === selectedPosts.id) {
+        if (Postss.id === selectedPosts.id) {
           return {
             id: selectedPosts.id,
-            nome:  req.nome.value,
+            nome: req.nome.value,
             descricao: req.descricao.value,
             preco: req.preco.value
           }
@@ -103,72 +103,72 @@ function Principal() {
       setPosts(formattedPosts)
 
       setUpdateModalOpen(false)
-    } catch(err) {
+    } catch (err) {
       throw err
     }
   }
 
-  return(
-    <> 
-    <Container
-      className="
-        d-flex
-        flex-column
-        align-items-start
-        justify-content-center
-        h-100
-        w-100
-        "
+  return (
+    <div className="body">
+    <Container id="container"
+        className="
+d-flex
+flex-column
+align-items-start
+justify-content-center
+h-100
+w-100
+"
     >
-      <Button
-        className="mb-8"
-        onClick={handleShowCreateModal}
-        variant='primary'>
-        Adicionar
-      </Button>
-     
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>preço</th>
-            <th>Descrição</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
+       
+        <Table  bordered>
+            <thead>
+                <tr>
+                    <th className="th">Nome</th>
+                    <th className="th">preço</th>
+                    <th className="th">Descrição</th>
+                    <th className="th">Ações</th>
+                </tr>
+            </thead>
 
-        <tbody>
-          {Posts && Posts.map(Posts=> (
-            <tr key={Posts.id}>
-              <td>{Posts.nome}</td>
-              <td>{Posts.preco}</td>
-              <td>{Posts.descricao}</td>
-              <td>
-                <Button onClick={() => deletePosts(Posts.id)} variant='danger'>
-                  Excluir
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleShowUpdateModal()
-                    setSelectedPosts(Posts)
-                  }}
-                  variant='warning'
-                  className='m-1'
+            <tbody >
+                {Posts && Posts.map(Posts => (
+                    <tr  key={Posts.id}>
+                        <td className="th">{Posts.nome}</td>
+                        <td className="th">{Posts.preco}</td>
+                        <td className="th">{Posts.descricao}</td>
+                        <td>
+                  <Button onClick={() => deletePosts(Posts.id)} variant='danger'>
+                    Excluir
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      handleShowUpdateModal()
+                      setSelectedPosts(Posts)
+                    }}
+                    variant='warning'
+                    className='m-1'
                   >
-                  Atualizar
-                </Button>
-              </td>
+                    Atualizar
+                  </Button>
+                </td>
 
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Container>
-    <CreateModal ModalOpen={CreateModalOpen} handleClose={handleCloseCreateModal} createPosts={createPosts} />
-    {selectedPosts && (
-      <UpdateModal ModalOpen={UpdateModalOpen} handleClose={handleCloseUpdateModal} updatePosts={updatePosts} Posts={selectedPosts} />
-    )}
-    </>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+        <Button
+                    className="mb-8"
+                    onClick={handleShowCreateModal}
+                    variant='primary'>
+                    Adicionar
+                </Button>
+      </Container>
+      <CreateModal ModalOpen={CreateModalOpen} handleClose={handleCloseCreateModal} createPosts={createPosts} />
+      {selectedPosts && (
+        <UpdateModal ModalOpen={UpdateModalOpen} handleClose={handleCloseUpdateModal} updatePosts={updatePosts} Posts={selectedPosts} />
+      )}
+    </div>
   )
 }
 
