@@ -4,7 +4,7 @@
 
 # Objetivos do projeto 🎯
 
-Nesse projeto a squad foi responsável por criar uma página Web com React e Bootstrap e consumir API que construí anteriormente em um outro projeto. O tema escolhido pela squad foi o de um Restaurante.
+Nesse projeto a squad foi responsável por criar uma página Web com React e Bootstrap e consumir API que construímos anteriormente em um outro projeto. O tema escolhido pela squad foi o de um restaurante.
 
 # Hospedagem 🏡
 
