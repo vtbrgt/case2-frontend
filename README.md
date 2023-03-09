@@ -6,6 +6,10 @@
 
 Nesse projeto a squad foi responsável por criar uma página Web com React e Bootstrap e consumir API que construímos anteriormente em um outro projeto. O tema escolhido pela squad foi o de um restaurante.
 
+#  Slides da Apresentação 🎪
+  [Slides no Canva](https://www.canva.com/design/DAFcjw-8vAk/p9XbBHWbhFSPJTw1DqMJVg/edit?utm_content=DAFcjw-8vAk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+
+
 # Hospedagem 🏡
 
 Você pode acessar o projeto partir deste [endereço](https://case2-frontend-rosy.vercel.app).
