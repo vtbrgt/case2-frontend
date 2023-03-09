@@ -30,7 +30,7 @@ function UpdateModal(props) {
 
           <Form.Group controlId="cargo">
             <Form.Label>
-              Preço
+              Cargo
             </Form.Label>
             <Form.Control defaultValue={props.Posts.cargo} type="text" />
           </Form.Group>

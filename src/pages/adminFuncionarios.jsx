@@ -36,7 +36,7 @@ function Funcionarios() {
   async function deletePosts(Id) {
     try {
       axios;
-      Api.delete('/funcionarios/' + Id);
+      Api.delete('/funcionario/' + Id);
 
       const formattedPosts = Posts.filter((Postss) => {
         if (Postss.id !== Id) {
@@ -59,11 +59,7 @@ function Funcionarios() {
       const cargo = req.cargo.value;
       const sobrenome = req.sobrenome.value;
       axios;
-      Api.post('/funcionario', {
-        nome: nome,
-        sobrenome: sobrenome,
-        cargo: cargo,
-      }).then((res) => {
+      Api.post('/funcionario', {nome: nome, sobrenome: sobrenome, cargo: cargo}).then((res) => {
         setPosts([
           ...Posts,
           {
@@ -89,7 +85,7 @@ function Funcionarios() {
       const sobrenome = req.sobrenome.value;
       const id = selectedPosts.id;
       axios;
-      Api.put('/funcionarios/' + id, {
+      Api.put('/funcionario/' + id, {
         id: id,
         nome: nome,
         sobrenome: sobrenome,
