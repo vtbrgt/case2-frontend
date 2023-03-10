@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button'
 import { Api } from '../api/Api';
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 function Login() {
-
+  const [token, setToken] = useState();
   const navigate = useNavigate();
 
   const handleRegister = (values) => {
+    axios
     Api.post("/register", {
       email_users: values.email,
       senha_users: values.password,
     }).then((response) => {
       alert(response.data.msg);
       console.log(response);
-      navigate('/login', { replace: true })
+      localStorage.setItem('tokenAuth', handleRegister);
+      localStorage.setItem('userAuth', JSON.stringify(response));
+      navigate('/adm', { replace: true })
+        alert("Usuário logado com sucesso!");
     });
   };
 
@@ -51,18 +56,6 @@ function Login() {
                   className="form-error"
                 />
               </div>
-
-              {/* <div className="form-group">
-                <Field
-                  name="confirmation" className="form-field" placeholder="Confirme sua senha" required
-                />
-
-                <ErrorMessage
-                  component="span"
-                  name="confirmation"
-                  className="form-error"
-                />
-              </div> */}
               <div>
                 <p>Já é cadastrado? Faça login <Link to="/login">Aqui</Link></p>
               </div>

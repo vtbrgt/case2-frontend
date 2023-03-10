@@ -5,6 +5,7 @@ import CreateModal from '../components/ModalSobremesas/CreateAddModal'
 import UpdateModal from '../components/ModalSobremesas/UpdateModal'
 import { Api } from '../api/Api'
 import './admin.css'
+import { Link } from 'react-router-dom'
 
 function Sobremesas() {
     const [Posts, setPosts] = useState()
@@ -121,6 +122,7 @@ function Sobremesas() {
         w-100
         "
             >
+                 <li className='voltar'><Button variant='dark'> <Link to={'/adm'}>Voltar</Link></Button></li><br />
                
                 <Table  bordered>
                     <thead>

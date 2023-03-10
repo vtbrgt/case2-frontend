@@ -28,15 +28,10 @@ footer .redes-socias img{
 
 footer .rodape ul > p{
     margin-bottom: 20px;
-    
-    
 }
 
 footer .rodape li{
     margin: 10px 0;
-}
-footer .rodape a{
-    color: #ffffff;
 }
 
 footer .rodape ul{
@@ -54,6 +49,7 @@ footer .rodape h3{
 footer .rodape a{
     text-decoration: none;
     font-family: Shrikhand;
+    color: #ffffff;
 }
 
 footer .rodape li {
