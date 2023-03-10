@@ -1,64 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 body {
-    background-color: #ffb49948;
+  background-color: #ffb49948;
 }
 
 .tabela {
-    border-bottom: #fcd96f 4px solid;
-    font-family: Shrikhand;
-    color: #d3723f;
-    background-color: #ffb49948;
+  border-bottom: #fcd96f 4px solid;
+  font-family: Shrikhand;
+  color: #d3723f;
+  background-color: #ffb49948;
 }
 
 .informacoes {
-    font-size: 25px;
-    text-align: center;
+  font-size: 25px;
+  text-align: center;
 }
 
 .nomePedido {
-    color: #4a2e1e;
+  color: #4a2e1e;
 }
 
 .centralizar {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #apresentar {
-    display: flex;
-    justify-content: center;
-    font-family: Shrikhand;
-    color: #fcd96f;
-    border-bottom: #d3723f solid 4px;
-    padding: 70px;
+  display: flex;
+  justify-content: center;
+  font-family: Shrikhand;
+  color: #fcd96f;
+  border-bottom: #d3723f solid 4px;
+  padding: 70px;
 
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .post h2 {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .bg {
-    background-image: url("https://valedocafeturismo.com.br/wp-content/uploads/2021/08/BG-onde-comer-Vale-do-cafe-turismo1.jpg");
+  background-image: url('https://valedocafeturismo.com.br/wp-content/uploads/2021/08/BG-onde-comer-Vale-do-cafe-turismo1.jpg');
 }
 
 .bg2 {
-    background-image: url("https://s1.1zoom.me/big7/114/Many_From_above_Plate_Frying_pan_Hands_Table_579939_2560x1156.jpg");
+  background-image: url('https://s1.1zoom.me/big7/114/Many_From_above_Plate_Frying_pan_Hands_Table_579939_2560x1156.jpg');
 }
 
 .bg3 {
-    background-image: url("https://www.suafranquia.com/views/sources/images/conteudo/principal/f523ce39baf7f1131c5c01712fbcfc79.webp");
+  background-image: url('https://www.suafranquia.com/views/sources/images/conteudo/principal/f523ce39baf7f1131c5c01712fbcfc79.webp');
 }
 
 #letra {
-
-    font-size: 70px !important;
-    text-shadow:
-        -2px -2px 1px #000000,
-        -2px 2px 1px #000000,
-        2px -2px 1px #000000,
-        2px 1px 1px #000000;
+  font-size: 70px !important;
+  text-shadow: -2px -2px 1px #000000, -2px 2px 1px #000000, 2px -2px 1px #000000,
+    2px 1px 1px #000000;
 }

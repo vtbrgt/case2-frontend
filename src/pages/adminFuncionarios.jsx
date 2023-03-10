@@ -60,7 +60,11 @@ function Funcionarios() {
       const cargo = req.cargo.value;
       const sobrenome = req.sobrenome.value;
       axios;
-      Api.post('/funcionario', {nome: nome, sobrenome: sobrenome, cargo: cargo}).then((res) => {
+      Api.post('/funcionario', {
+        nome: nome,
+        sobrenome: sobrenome,
+        cargo: cargo,
+      }).then((res) => {
         setPosts([
           ...Posts,
           {
@@ -127,7 +131,13 @@ function Funcionarios() {
         w-100
         "
       >
-        <li className='voltar'><Button variant='dark'> <Link to={'/adm'}>Voltar</Link></Button></li><br />
+        <li className="voltar">
+          <Button variant="dark">
+            {' '}
+            <Link to={'/adm'}>Voltar</Link>
+          </Button>
+        </li>
+        <br />
         <Table bordered>
           <thead>
             <tr>

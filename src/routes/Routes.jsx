@@ -1,74 +1,71 @@
 // import React from 'react';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home'
-import Sobre from '../pages/Sobre'
-import Menu from '../pages/Menu'
-import Login from '../pages/Login'
-import Contato from '../pages/Contato'
-import Admin from '../pages/admin'
-import Register from '../pages/Register'
-import App from '../App'
+import Home from '../pages/Home';
+import Sobre from '../pages/Sobre';
+import Menu from '../pages/Menu';
+import Login from '../pages/Login';
+import Contato from '../pages/Contato';
+import Admin from '../pages/admin';
+import Register from '../pages/Register';
+import App from '../App';
 import { createBrowserRouter } from 'react-router-dom';
-import Principal from '../pages/adminPrincipal'
-import Entradas from '../pages/adminEntradas'
-import Sobremesas from '../pages/adiminSobremesas'
-import Funcionarios from '../pages/adminFuncionarios'
+import Principal from '../pages/adminPrincipal';
+import Entradas from '../pages/adminEntradas';
+import Sobremesas from '../pages/adiminSobremesas';
+import Funcionarios from '../pages/adminFuncionarios';
 
 export const Rotas = createBrowserRouter([
   {
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: '/menu',
-        element: <Menu/>
+        element: <Menu />,
       },
       {
         path: '/sobre',
-        element: <Sobre/>
+        element: <Sobre />,
       },
       {
         path: '/login',
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: '/contato',
-        element: <Contato/>
+        element: <Contato />,
       },
       {
         path: '/register',
-        element: <Register/>
+        element: <Register />,
       },
       {
         path: '/adm',
-        element: <Admin/>
+        element: <Admin />,
       },
       {
         path: '/adm/principal',
-        element: <Principal/>
+        element: <Principal />,
       },
       {
         path: '/adm/entadas',
-        element: <Entradas />
+        element: <Entradas />,
       },
       {
         path: '/adm/sobremesas',
-        element: <Sobremesas />
+        element: <Sobremesas />,
       },
       {
         path: '/adm/funcionarios',
-        element: <Funcionarios />
-      }
-    ]
-  }
-])
-
-
-
+        element: <Funcionarios />,
+      },
+    ],
+  },
+]);
 
 // import { isAuthenticated } from '../auth'
 
@@ -77,7 +74,7 @@ export const Rotas = createBrowserRouter([
 //           <Routes>
 //             <Route exact path="/" element={<Home />} />
 //             <Route exact path="/sobre" element={<Sobre/>} />
-//             <Route exact path="/menu" element={<Menu/>} /> 
+//             <Route exact path="/menu" element={<Menu/>} />
 //             <Route exact path="/contato" element={<Contato/>} />
 //             {/* <PrivateRoute exact path="/adm" element={<Admin />} isAuthenticated={isAuthenticated} /> */}
 //         <Route path="/login" element={<Login />} />
