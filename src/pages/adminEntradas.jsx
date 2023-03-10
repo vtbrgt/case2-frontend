@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import CreateModal from '../components/ModalEntradas/CreateAddModal'
 import UpdateModal from '../components/ModalEntradas/UpdateModal'
 import { Api } from '../api/Api'
+import { Link } from 'react-router-dom'
 
 function Entradas() {
     const [Posts, setPosts] = useState()
@@ -120,6 +121,7 @@ function Entradas() {
         w-100
         "
             >
+               <li className='voltar'><Button variant='dark'> <Link to={'/adm'}>Voltar</Link></Button></li><br />
                
                 <Table  bordered>
                     <thead>

@@ -6,10 +6,10 @@ function Admin() {
   return (
     <div className="body" >
       <section className="adm">
-      <Button variant="dark" type="submit" ><Link className="text-deco" to="/adm/principal">Principal</Link></Button><br/>
-      <Button variant="dark" type="submit"><Link className="text-deco" to="/adm/entadas">Entradas</Link></Button><br/>
-      <Button variant="dark" type="submit"><Link className="text-deco" to="/adm/sobremesas">Sobremesas</Link></Button><br/>
-      <Button variant="dark" type="submit"><Link className="text-deco" to="/adm/funcionarios">Funcionarios</Link></Button><br/>
+     <li className="voltar"> <Button variant="dark" type="submit" ><Link className="text-deco" to="/adm/principal">Principal</Link></Button></li><br/>
+     <li className="voltar">  <Button variant="dark" type="submit"><Link className="text-deco" to="/adm/entadas">Entradas</Link></Button></li><br/>
+     <li className="voltar">   <Button variant="dark" type="submit"><Link className="text-deco" to="/adm/sobremesas">Sobremesas</Link></Button></li><br/>
+     <li className="voltar">   <Button variant="dark" type="submit"><Link className="text-deco" to="/adm/funcionarios">Funcionarios</Link></Button></li>
     </section>
     </div>
   )

@@ -6,12 +6,14 @@ import './Login.css'
 import Button from 'react-bootstrap/Button'
 
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 function Login() {
   const [token, setToken] = useState();
   const navigate = useNavigate();
 
   const handleLogin = (values) => {
+    axios
     Api.post("/login", {
       email_users: values.email,
       senha_users: values.password,
@@ -58,7 +60,7 @@ function Login() {
           >
             <Form className=" login-form">
               <div className="form-group">
-                <Field name="email" className="form-field" placeholder="Email" />
+                <Field name="email" className="form-field" type="email" placeholder="Email" />
 
                 <ErrorMessage
                   component="span"
@@ -68,7 +70,7 @@ function Login() {
               </div><br />
               {/*Outro campo*/}
               <div className="form-group">
-                <Field name="password" className="form-field" placeholder="Senha" />
+                <Field name="password" type="password" className="form-field" placeholder="Senha" />
 
                 <ErrorMessage
                   component="span"

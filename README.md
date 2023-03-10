@@ -51,7 +51,7 @@ npm run dev
 - `react-bootstrap`
 - `axios`
 - `formik`
-- `yup`
+- `css`
 
 # Autor
 
