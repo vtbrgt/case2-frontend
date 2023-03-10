@@ -5,6 +5,7 @@ import CreateModal from '../components/ModalFuncionarios/CreateAddModal';
 import UpdateModal from '../components/ModalFuncionarios/UpdateModal';
 import { Api } from '../api/Api';
 import './admin.css';
+import { Link } from 'react-router-dom';
 
 function Funcionarios() {
   const [Posts, setPosts] = useState();
@@ -126,6 +127,7 @@ function Funcionarios() {
         w-100
         "
       >
+        <li className='voltar'><Button variant='dark'> <Link to={'/adm'}>Voltar</Link></Button></li><br />
         <Table bordered>
           <thead>
             <tr>
