@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 import { Api } from '../api/Api';
-import { ErrorMessage, Formik, Form, Field } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { ErrorMessage, Formik, Form, Field } from 'formik';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
@@ -10,8 +10,8 @@ function Login() {
   const navigate = useNavigate();
 
   const handleRegister = (values) => {
-    axios
-    Api.post("/register", {
+    axios;
+    Api.post('/register', {
       email_users: values.email,
       senha_users: values.password,
     }).then((response) => {
@@ -19,26 +19,26 @@ function Login() {
       console.log(response);
       localStorage.setItem('tokenAuth', handleRegister);
       localStorage.setItem('userAuth', JSON.stringify(response));
-      navigate('/adm', { replace: true })
-        alert("Usuário logado com sucesso!");
+      navigate('/adm', { replace: true });
+      alert('Usuário logado com sucesso!');
     });
   };
 
   return (
-    <div className='body'>
-
+    <div className="body">
       <img src="../assets/contato.jpg" alt="" />
       <section>
         <div className="container center">
           <h1>Cadastro</h1>
-          <Formik
-            initialValues={{}}
-            onSubmit={handleRegister}
-
-          >
+          <Formik initialValues={{}} onSubmit={handleRegister}>
             <Form className="register-form">
               <div className="register-form-group">
-                <Field name="email" required className="form-field" placeholder="Email" />
+                <Field
+                  name="email"
+                  required
+                  className="form-field"
+                  placeholder="Email"
+                />
 
                 <ErrorMessage
                   component="span"
@@ -48,7 +48,12 @@ function Login() {
               </div>
 
               <div className="form-group">
-                <Field name="password" required className="form-field" placeholder="Senha" />
+                <Field
+                  name="password"
+                  required
+                  className="form-field"
+                  placeholder="Senha"
+                />
 
                 <ErrorMessage
                   component="span"
@@ -57,7 +62,9 @@ function Login() {
                 />
               </div>
               <div>
-                <p>Já é cadastrado? Faça login <Link to="/login">Aqui</Link></p>
+                <p>
+                  Já é cadastrado? Faça login <Link to="/login">Aqui</Link>
+                </p>
               </div>
               <Button variant="dark" type="submit">
                 Login
