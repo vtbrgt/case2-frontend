@@ -48,6 +48,7 @@ npm run dev
 
 - `Vite`
 - `React.js`
+` `Node.js`
 - `react-bootstrap`
 - `axios`
 - `formik`
